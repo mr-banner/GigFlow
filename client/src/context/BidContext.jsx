@@ -14,7 +14,7 @@ export const BidProvider = ({ children }) => {
       setError(null);
 
       await axios.post(
-        "/api/bids",
+        "/bids",
         { gigId, message, price },
         { withCredentials: true }
       );
@@ -36,7 +36,7 @@ export const BidProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
-      const res = await axios.get(`/api/bids/${gigId}`, {
+      const res = await axios.get(`/bids/${gigId}`, {
         withCredentials: true,
       });
 
@@ -56,7 +56,7 @@ export const BidProvider = ({ children }) => {
       setError(null);
 
       await axios.patch(
-        `/api/bids/${bidId}/hire`,
+        `/bids/${bidId}/hire`,
         {},
         { withCredentials: true }
       );
@@ -87,7 +87,7 @@ export const BidProvider = ({ children }) => {
       setError(null);
 
       await axios.patch(
-        `/api/bids/${bidId}/reject`,
+        `/bids/${bidId}/reject`,
         {},
         { withCredentials: true }
       );
@@ -111,7 +111,7 @@ export const BidProvider = ({ children }) => {
   const fetchMyBids = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("/api/bids/my", { withCredentials: true });
+      const res = await axios.get("/bids/my", { withCredentials: true });
       setBids(res.data.data.bids);
     } catch (err) {
       const message = err.response?.data?.message || "Failed to reject bid";

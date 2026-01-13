@@ -15,7 +15,7 @@ export const GigProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
-      const res = await axios.get("/api/gigs", {
+      const res = await axios.get("/gigs", {
         params: search ? { search } : {},
       });
 
@@ -35,7 +35,7 @@ export const GigProvider = ({ children }) => {
       setError(null);
 
       const res = await axios.post(
-        "/api/gigs",
+        "/gigs",
         { title, description, budget },
         { withCredentials: true }
       );
@@ -58,7 +58,7 @@ export const GigProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
-      const res = await axios.get("/api/gigs/getGigs", {
+      const res = await axios.get("/gigs/getGigs", {
         withCredentials: true,
       });
 
@@ -78,7 +78,7 @@ export const GigProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
-      const res = await axios.get(`/api/gigs/${id}`);
+      const res = await axios.get(`/gigs/${id}`);
       setSelectedGig(res.data.data.gig);
     } catch (err) {
       const message =

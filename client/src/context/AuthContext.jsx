@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("/api/auth/getUser");
+        const res = await axios.get("/auth/getUser");
         setUser(res.data.data.user);
       } catch {
         setUser(null);
@@ -25,7 +25,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async ({ email, password }) => {
     try {
-      const res = await axios.post("/api/auth/login", { email, password });
+      const res = await axios.post("/auth/login", { email, password });
       setUser(res.data.data.user);
       return true;
     } catch (error) {
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async ({ name, email, password }) => {
     try {
-      const res = await axios.post("/api/auth/register", {
+      const res = await axios.post("/auth/register", {
         name,
         email,
         password,
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await axios.post("/api/auth/logout");
+    await axios.post("/auth/logout");
     toast.success("You have successfully logged out.");
     setUser(null);
   };
