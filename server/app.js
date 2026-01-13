@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 app.use(cookieParser());
 app.use(cors({
-  origin: ["http://localhost:5173", "https://gig-flow-ashy.vercel.app"],
+  origin: ["http://localhost:5173", "https://gig-flow-5cq1.vercel.app"],
   credentials: true
 }));
 
