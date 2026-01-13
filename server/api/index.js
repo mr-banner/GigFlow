@@ -1,5 +1,5 @@
-import app from "../server/app.js";
-import connectDB from "../server/db/index.js";
+import app from "../app.js";
+import connectDB from "../db/index.js";
 
 let isConnected = false;
 
