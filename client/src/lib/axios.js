@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: "https://gig-flow-ashy.vercel.app",
   withCredentials: true, 
 });
