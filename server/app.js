@@ -27,4 +27,4 @@ app.use("/api/auth",authRouter);
 app.use("/api/gigs",gigRouter);
 app.use("/api/bids", bidRouter);
 
-export {app};
+export default app;
