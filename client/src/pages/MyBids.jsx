@@ -29,7 +29,7 @@ const MyBids = () => {
       const uniqueGigIds = [...new Set(bids.map(b => b.gigId))];
       const entries = await Promise.all(
         uniqueGigIds.map(async (id) => {
-          const res = await axios.get(`/api/gigs/${id}`);
+          const res = await axios.get(`/gigs/${id}`);
           return [id, res.data.data.gig];
         })
       );
